@@ -1,0 +1,47 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centrar verticalmente */
+    width: 100%; /* Asegurar que ocupe toda la pantalla */
+}
+
+.login-card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    padding: 20px;
+    width: 90%;
+    max-width: 600px; /* Establecer un ancho máximo mayor */
+}
+
+.login-card .card-header {
+    background-color: #007bff;
+    color: #ffffff;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+
+.login-card h1 {
+    margin: 0;
+    font-size: 1.25rem; /* Aumentar el tamaño de la fuente */
+}
+
+.login-card .form-control {
+    border-radius: 5px;
+    font-size: 1rem; /* Aumentar el tamaño de la fuente del input */
+}
+
+.login-card .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    font-size: 1rem; /* Aumentar el tamaño de la fuente del botón */
+}
+
+.login-card .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}

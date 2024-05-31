@@ -14,7 +14,7 @@ $params = explode('/', $action);
 switch ($params[0]) {
     case 'home':
         $controller = new jugadorController();
-        $controller->showTasks();
+        $controller->showJugadores();
         break;
         case 'addJugador':
             $controller = new jugadorController();
@@ -31,6 +31,14 @@ switch ($params[0]) {
         case 'verify':
                 $controller = new loginController();
                 $controller->verify();
+             break;
+             case 'logout':
+                $controller = new loginController();
+                $controller->logout();
+             break;
+             case 'delete':
+                $controller = new jugadorController();
+                $controller->deleteJugador($params[1]);
              break;
     default:
        echo"404 not foundd";

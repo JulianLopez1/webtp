@@ -2,7 +2,6 @@
 require_once "config.php";
 
 class Model {
-
     protected $conexion;
     
     public function __construct()

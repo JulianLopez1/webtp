@@ -18,30 +18,41 @@ class loginController
     function verify()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (!empty($_POST['email']) && !empty($_POST['password'])) {
-                $nombre = $_POST['email'];
-                $pass = $_POST['password'];
-                // $pass = '1234';
-                // echo password_hash($pass,PASSWORD_DEFAULT);
-                // echo '<br>';
-                // echo '<br>';
-                // echo '<br>';
-                // echo '<br>';
-                // var_dump($nombre, $password);
-                // die;
+            // Filtrar y validar entradas
+            $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
+            $pass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        
+            if ($nombre && $pass) {
+                // Obtener el usuario desde el modelo
                 $usuario = $this->model->getUser($nombre);
-                // var_dump($usuario);
-                if ($usuario) {
-                   
-                    header("Location:" . BASE_URL . "home");
-                 } 
-                // else {
-                //     $this->view->showLogin("Usuario incorrecto");
-                // }
+        
+                // Verificar si el usuario existe y la contraseña es correcta
+                if ($usuario && password_verify($pass, $usuario->password)) {
+                    // Iniciar sesión si no está iniciada
+                    if (session_status() == PHP_SESSION_NONE) {
+                        session_start();
+                    }
+                    $_SESSION['IS_LOGGED'] = true;
+                    $_SESSION['USERNAME'] = $usuario->nombre;
+                    $_SESSION['ROLE'] = $usuario->rol;
+        
+                    // Redirigir al usuario a la página de inicio
+                    header("Location: " . BASE_URL . "home");
+                    exit();
+                } else {
+                    // Mostrar mensaje de error si el usuario o la contraseña son incorrectos
+                    $this->view->showLogin("Usuario o contraseña incorrectos");
+                }
+            } else {
+                // Mostrar mensaje de error si faltan datos obligatorios
+                $this->view->showLogin("Faltan datos obligatorios");
             }
-            //  else {
-            //     $this->view->showLogin("faltan datos obligatorios");
-            // }
+        }
+        }
+        function logout(){
+            session_start();
+            session_destroy();
+            header("Location:" . BASE_URL . "showLogin");die();
+    
         }
     }
-}
