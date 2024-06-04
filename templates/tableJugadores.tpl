@@ -25,19 +25,24 @@
                     <td colspan="5">No hay tareas para mostrar</td>
                 </tr>
                 {/if}
-                {foreach $jugadores as $jugador} 
+            {foreach $jugadores as $jugador} 
                 <tr>
-                    <td>{$jugador->nombre}</td> 
+                    <td>{$jugador->nombre}</td>
                     <td>{$jugador->apellido}</td>
                     <td>{$jugador->club}</td>
                     <td>{$jugador->representante_id}</td>
-                    <td>
-                        <a href='showJugador/{$jugador->id}' class='btn btn-primary'>Ver</a>
-                        <a href='show/{$jugador->id}' class='btn btn-warning'>Editar</a>
-                        <a href='delete/{$jugador->id}' class='btn btn-danger'>Eliminar</a>
-                    </td>
-                </tr>
-                {/foreach}
+                    {if $logeado == true}  
+                        <td>
+                            <a href='showJugador/{$jugador->id}' class='btn btn-primary'>Ver</a>
+                            <a href='delete/{$jugador->id}' class='btn btn-danger'>Eliminar</a>
+                        </td>
+                        {else}
+                            <td>
+                            <a href='showJugador/{$jugador->id}' class='btn btn-primary'>Ver</a>
+                            </td>
+                    {/if}
+                    </tr>
+            {/foreach}
             </tbody>
         </table>
     </div>

@@ -1,7 +1,6 @@
 {include 'htmlStart.tpl'}
 <link href="css/login.css" rel="stylesheet">
 <div class="login-container">
-<link href="css/start.css" rel="stylesheet">
         <div class="login-card">
             <div class="card-header">
                 <h1>Login</h1>

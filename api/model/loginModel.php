@@ -5,7 +5,6 @@ class loginModel extends model{
         function getUser($nombre){
             $db = $this->createConexion();
            
-            //Enviar la consulta
             $sentencia = $db->prepare("SELECT * FROM usuario WHERE nombre = ?");
             $sentencia->execute([$nombre]);
             $usuario = $sentencia->fetch(PDO::FETCH_OBJ);

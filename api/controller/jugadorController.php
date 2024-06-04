@@ -27,6 +27,16 @@ class jugadorController{
          $representante = $this->modelR->getAllRepresentante();
          $this->view->showJugadores($jugador, $representante);
     }
+
+    function showJugadoresFRep(){
+        $jugador = $this->model->getAll();        
+            if($_SERVER["REQUEST_METHOD"] == "POST") {
+                if($_POST['representante_id'] !== ""){
+                    $representante = $_POST['representante_id'];
+                    $this->view->showJugadoresFRep($jugador, $representante);
+         }
+   }
+}
     function newJugador(){
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(!empty($_POST['nombre']) && !empty($_POST['apellido'])&&

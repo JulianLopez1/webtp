@@ -1,5 +1,5 @@
 .bodyhtmlStart {
-    background-image: url('fotopelota.jpeg'); /* Ruta de tu imagen de fondo */
+    background-image: url('.jpg'); /* Ruta de tu imagen de fondo */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

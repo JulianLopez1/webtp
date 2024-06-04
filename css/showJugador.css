@@ -1,5 +1,5 @@
 body {
-    background-image: url('fotopelota.jpeg');
+    background-image: url('login.jpg');
 }
 table {
     width: 100%;
@@ -22,4 +22,10 @@ table thead {
 }
 table tbody tr:hover {
     background-color: #65aec0;
+}
+.text-center {
+    text-align: center;
+    font-size: 24px;
+   color: #007bff;
+    margin-bottom: 20px;
 }

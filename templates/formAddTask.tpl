@@ -10,6 +10,7 @@
     <link href="css/tablaJugadores.css" rel="stylesheet">
 </head>
 <body>
+{if $logeado == true}  
     <div class="container">
         <div class="form-container">
             <form action="addJugador" method="POST">
@@ -34,14 +35,27 @@
                             <option value="{$representante->id}">{$representante->nombre}</option>
                         {/foreach}
                     </select>
-                </div>
+              
                 <button type="submit" class="btn btn-primary col-12">Agregar</button>
+                </form>
+            {/if}
+                <form action="showJR" method="POST">
+                    <legend class="text-center">Buscar por representante</legend>
+                <label class="form-label">Representante</label>
+                <select name="representante_id" class="form-select" aria-label="Default select example">
+                
+                    <option selected>-- Seleccione --</option>
+                    {foreach $representantes as $representante}
+                        <option value="{$representante->id}">{$representante->nombre}</option>
+                    {/foreach}
+                </select>
+                <button type="submit" class="btn btn-primary col-12">Buscar</button>
             </form>
-            <form action="showJugador" method="GET">
-                <button type="submit" class="btn btn-secondary col-12 mt-3">Buscar</button>
-            </form>
+            </div>
         </div>
     </div>
+    
+
 
    
 </body>

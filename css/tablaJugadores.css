@@ -1,11 +1,11 @@
 body {
-    background-image: url('fotopelota.jpeg'); /* Ruta de tu imagen de fondo */
+    background-image: url('rep.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Arial', sans-serif;
-    height: 100vh; /* Asegúrate de que el fondo cubra toda la pantalla */
+    height: 100vh; 
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@ body {
 }
 
 .navbar {
-    background-color: #007bff; /* Primary color */
+    background-color: #007bff; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
@@ -22,7 +22,7 @@ body {
     width: 90%;
     max-width: 800px;
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    background-color: rgba(255, 255, 255, 0.9); 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
