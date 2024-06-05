@@ -1,6 +1,7 @@
 body {
     background-image: url('login.jpg');
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -10,22 +11,27 @@ table {
     text-align: left;
     background-color: #fff;
 }
-table th, table td {
+
+table th,
+table td {
     padding: 12px 15px;
     border: 1px solid #d6dfdd;
-   
+
 }
+
 table thead {
     background-color: #f2f2f2;
     background-color: #007bff;
     color: #fff;
 }
+
 table tbody tr:hover {
     background-color: #65aec0;
 }
+
 .text-center {
     text-align: center;
     font-size: 24px;
-   color: #007bff;
+    color: #007bff;
     margin-bottom: 20px;
 }

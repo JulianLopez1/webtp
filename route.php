@@ -17,42 +17,42 @@ switch ($params[0]) {
         $controller->showJugadores();
         break;
 
-        case 'addJugador':
-            $controller = new jugadorController();
-            $controller->newJugador();
+    case 'addJugador':
+        $controller = new jugadorController();
+        $controller->newJugador();
         break;
 
-        case 'showJugador':
-            $controller = new jugadorController();
-            $controller->showJugador($params[1]);
-            
+    case 'showJugador':
+        $controller = new jugadorController();
+        $controller->showJugador($params[1]);
+
         break;
 
-        case 'showLogin':
-            $controller = new loginController();
-            $controller->showLogin();
+    case 'showLogin':
+        $controller = new loginController();
+        $controller->showLogin();
         break;
 
-        case 'verify':
-                $controller = new loginController();
-                $controller->verify();
+    case 'verify':
+        $controller = new loginController();
+        $controller->verify();
         break;
 
-        case 'logout':
-                $controller = new loginController();
-                $controller->logout();
+    case 'logout':
+        $controller = new loginController();
+        $controller->logout();
         break;
 
-        case 'delete':
-                $controller = new jugadorController();
-                $controller->deleteJugador($params[1]);
+    case 'delete':
+        $controller = new jugadorController();
+        $controller->deleteJugador($params[1]);
         break;
-        case 'showJR':
-            $controller = new jugadorController();
-            $controller->showJugadoresFRep();
-    break;
+    case 'showJR':
+        $controller = new jugadorController();
+        $controller->showJugadoresFRep();
+        break;
     default:
-       echo"404 not foundd";
+        echo "404 not foundd";
 }
 
 
